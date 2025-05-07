@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Accounts>
+  <Account>
+    <Login>Бибельбобус</Login>
+    <Password>hashed_password_123</Password>
+  </Account>
+  <Account>
+    <Login>Абобус</Login>
+    <Password>hashed_pas456</Password>
+  </Account>
+  <Account>
+    <Login>Ivan</Login>
+    <Password>12345678</Password>
+  </Account>
+  <Account>
+    <Login>ivan</Login>
+    <Password>12345678</Password>
+  </Account>
+</Accounts>
