@@ -45,6 +45,13 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.flowMain = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelCardTemplate = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Close_Button)).BeginInit();
             this.panel2.SuspendLayout();
@@ -53,6 +60,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.flowMain.SuspendLayout();
+            this.panelCardTemplate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -142,7 +152,6 @@
             this.label3.Size = new System.Drawing.Size(123, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "мой профиль";
-            
             // 
             // pictureBox2
             // 
@@ -214,6 +223,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(11, 9);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
@@ -232,11 +242,89 @@
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
+            // flowMain
+            // 
+            this.flowMain.AutoScroll = true;
+            this.flowMain.BackColor = System.Drawing.Color.Gainsboro;
+            this.flowMain.Controls.Add(this.panelCardTemplate);
+            this.flowMain.Location = new System.Drawing.Point(293, 180);
+            this.flowMain.Name = "flowMain";
+            this.flowMain.Size = new System.Drawing.Size(702, 434);
+            this.flowMain.TabIndex = 7;
+            // 
+            // panelCardTemplate
+            // 
+            this.panelCardTemplate.BackColor = System.Drawing.Color.LightGray;
+            this.panelCardTemplate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCardTemplate.Controls.Add(this.button1);
+            this.panelCardTemplate.Controls.Add(this.label6);
+            this.panelCardTemplate.Controls.Add(this.label7);
+            this.panelCardTemplate.Controls.Add(this.label8);
+            this.panelCardTemplate.Controls.Add(this.pictureBox5);
+            this.panelCardTemplate.Location = new System.Drawing.Point(10, 10);
+            this.panelCardTemplate.Margin = new System.Windows.Forms.Padding(10);
+            this.panelCardTemplate.Name = "panelCardTemplate";
+            this.panelCardTemplate.Size = new System.Drawing.Size(666, 113);
+            this.panelCardTemplate.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(283, 83);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Подробнее";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(137, 63);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(222, 16);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "3-комн. квартира, 75 кв.м, ремонт";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(139, 35);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(143, 18);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Квартира в Москве";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(137, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 25);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "50000";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.RosyBrown;
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(131, 111);
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1007, 626);
+            this.Controls.Add(this.flowMain);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel3);
@@ -261,6 +349,10 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.flowMain.ResumeLayout(false);
+            this.panelCardTemplate.ResumeLayout(false);
+            this.panelCardTemplate.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,6 +376,13 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.FlowLayoutPanel flowMain;
+        private System.Windows.Forms.Panel panelCardTemplate;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 

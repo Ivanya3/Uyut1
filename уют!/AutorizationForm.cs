@@ -110,9 +110,8 @@ namespace уют_
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-            string login = AutL.Text.Trim(); // Убираем пробелы
+            string login = AutL.Text.Trim(); 
 
-            // Если поле пустое - скрываем ошибку и выходим
             if (string.IsNullOrEmpty(login))
             {
                 ShowError("*Введите логин");
@@ -120,7 +119,6 @@ namespace уют_
                 return;
             }
 
-            // Проверяем условия по очереди
             if (login.Length < 3)
             {
                 ShowError("*Логин должен быть от 3 символов");
@@ -175,7 +173,7 @@ namespace уют_
                 return;
             }
 
-            // Проверяем пароль (сравниваем хеши)
+            // Проверяем пароль 
             bool isPasswordCorrect = PasswordHasher.VerifyPassword(password, userAccount.Password);
 
             if (!isPasswordCorrect)
@@ -184,11 +182,11 @@ namespace уют_
                 return;
             }
 
-            // Есохраняем пользователя и открываем главную форму
+            // сохраняем пользователя и открываем главную форму
             AppContext.CurrentUser = userAccount;
 
-            ProfileForm profileForm = new ProfileForm();
-            profileForm.Show();
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
             this.Hide();
         }
 

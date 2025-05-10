@@ -74,8 +74,8 @@ namespace уют_
                         RegP.Text = "";
                     }
 
-                    ProfileForm profileForm = new ProfileForm();
-                    profileForm.Show();
+                    MainForm mainForm = new MainForm();
+                    mainForm.Show();
                     this.Hide();
                 }
             }
@@ -90,15 +90,13 @@ namespace уют_
         {
             string login = RegL.Text.Trim(); // Убираем пробелы
 
-            // Если поле пустое - скрываем ошибку и выходим
+            
             if (string.IsNullOrEmpty(login))
             {
                 ShowError("*Введите логин");
                 button1.Enabled = false;
                 return;
             }
-
-            // Проверяем условия по очереди
             if (login.Length < 3)
             {
                 ShowError("*Логин должен быть от 3 символов");
@@ -126,7 +124,6 @@ namespace уют_
             RegL.BackColor = SystemColors.Window;
         }
 
-        // Показать сообщение об ошибке
         private void ShowError(string message)
         {
             label3.Text = message;
@@ -136,7 +133,7 @@ namespace уют_
         private void TextBox2_TextChanged(object sender, EventArgs e)
         {
             string password = RegP.Text;
-            string login = RegL.Text.Trim(); // Получаем логин
+            string login = RegL.Text.Trim();
 
             
             if (string.IsNullOrEmpty(password))
@@ -146,7 +143,6 @@ namespace уют_
                 return;
             }
 
-            // Последовательная проверка всех условий
             if (password.Length < 8)
             {
                 ShowPasswordError("*Пароль должен быть от 8 символов");
