@@ -17,117 +17,87 @@ namespace уют_
         public RegistrationForm()
         {
             InitializeComponent();
-            button1.Enabled = false;
+            button_Reg.Enabled = false;
 
-            button1.Click += button1_Click;
+            button_Reg.Click += button1_Click;
             Close_Button.Click += pictureBox4_Click;//закрытие
             Close_Button.MouseEnter += Close_Button_MouseEnter;
             Close_Button.MouseLeave += Close_Button_MouseLeave;
             
 
-            Label2.Click += Label2_Click;//переход
+            refund.Click += Label2_Click;//переход
 
-            //-----------------------------------
-            label4.ForeColor = Color.Red;
-            label4.Visible = false;
+            labelR.ForeColor = Color.Red;
             RegP.TextChanged += TextBox2_TextChanged;
 
 
-            label3.ForeColor = Color.Red;
-            label3.Visible = false;
+            labelL.ForeColor = Color.Red;
             RegL.TextChanged += TextBox1_TextChanged;
         }
-        //-----------добавляем аккаунт
+
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(RegL.Text))
+            string login = RegL.Text;
+            string password = PasswordHasher.HashPassword(RegP.Text);
+
+
+            // Пдобавить аккаунт
+            bool success = AccountManager.AddAccount(login, password);
+
+            AppContext.CurrentUser = new Account
             {
-                ShowError("*Введите логин");
-                button1.Enabled = false;
-            }
-            else
-            {
-                if (string.IsNullOrEmpty(RegP.Text))
-                {
-                    ShowPasswordError("*Введите пароль");
-                    button1.Enabled = false;
-                }
-                else
-                {
-                    string login = RegL.Text;
-                    string password = PasswordHasher.HashPassword(RegP.Text);
+                Login = RegL.Text,
+                Password = RegP.Text
+            };
 
 
-                    // Пдобавить аккаунт
-                    bool success = AccountManager.AddAccount(login, password);
-
-                    AppContext.CurrentUser = new Account
-                    {
-                        Login = RegL.Text,
-                        Password = RegP.Text
-                    };
-
-                    if (success)
-                    {
-                        MessageBox.Show("Аккаунт успешно создан!");
-                        RegL.Text = "";
-                        RegP.Text = "";
-                    }
-
-                    MainForm mainForm = new MainForm();
-                    mainForm.Show();
-                    this.Hide();
-                }
-            }
-
-
-
-
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+            this.Hide();
         }
-        //-----=----------------------------------------------
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-            string login = RegL.Text.Trim(); // Убираем пробелы
+            string login = RegL.Text.Trim(); 
 
             
             if (string.IsNullOrEmpty(login))
             {
-                ShowError("*Введите логин");
-                button1.Enabled = false;
+                ShowError("Введите логин");
+                button_Reg.Enabled = false;
                 return;
             }
             if (login.Length < 3)
             {
-                ShowError("*Логин должен быть от 3 символов");
-                button1.Enabled = false;
+                ShowError("Логин должен быть от 3 символов");
+                button_Reg.Enabled = false;
                 return;
             }
 
             if (login.Length > 20)
             {
-                ShowError("*Логин должен быть до 20 символов");
-                button1.Enabled = false;
+                ShowError("Логин должен быть до 20 символов");
+                button_Reg.Enabled = false;
                 return;
             }
 
             if (!System.Text.RegularExpressions.Regex.IsMatch(login, @"^[a-zA-Z0-9_]+$"))
             {
-                ShowError("*Только буквы (a-z), цифры (0-9) и _");
-                button1.Enabled = false;
+                ShowError("Только буквы (a-z), цифры (0-9) и _");
+                button_Reg.Enabled = false;
                 return;
             }
 
             // Если все проверки пройдены
-            label3.Visible = false;
-            button1.Enabled = true;
+            labelL.Visible = false;
+            button_Reg.Enabled = true;
             RegL.BackColor = SystemColors.Window;
         }
 
         private void ShowError(string message)
         {
-            label3.Text = message;
-            label3.Visible = true;
+            labelL.Text = message;
+            labelL.Visible = true;
         }
 
         private void TextBox2_TextChanged(object sender, EventArgs e)
@@ -138,46 +108,45 @@ namespace уют_
             
             if (string.IsNullOrEmpty(password))
             {
-                ShowPasswordError("*Введите пароль");
-                button1.Enabled = false;
+                ShowPasswordError("Введите пароль");
+                button_Reg.Enabled = false;
                 return;
             }
 
             if (password.Length < 8)
             {
-                ShowPasswordError("*Пароль должен быть от 8 символов");
-                button1.Enabled = false;
+                ShowPasswordError("Пароль должен быть от 8 символов");
+                button_Reg.Enabled = false;
                 return;
             }
 
             if (password.Length > 32)
             {
-                ShowPasswordError("*Пароль должен быть до 32 символов");
-                button1.Enabled = false;
+                ShowPasswordError("Пароль должен быть до 32 символов");
+                button_Reg.Enabled = false;
                 return;
             }
 
             if (password == login)
             {
-                ShowPasswordError("*Пароль не должен совпадать с логином");
-                button1.Enabled = false;
+                ShowPasswordError("Пароль не должен совпадать с логином");
+                button_Reg.Enabled = false;
                 return;
             }
 
             // Если все проверки пройдены
-            label4.Visible = false;
-            button1.Enabled = true;
+            labelR.Visible = false;
+            button_Reg.Enabled = true;
             RegP.BackColor = SystemColors.Window; // убираем подсветку 
         }
 
-
         private void ShowPasswordError(string message)
         {
-            label4.Text = message;
-            label4.Visible = true;
+            labelR.Text = message;
+            labelR.Visible = true;
             RegP.BackColor = Color.LightPink; // Подсветка ошибки
         }
-        //--------------------------------------------------------------
+
         private void Label2_Click(object sender, EventArgs e)
         {
             AutorizationForm autorizationForm = new AutorizationForm();
@@ -203,7 +172,7 @@ namespace уют_
         {
 
         }
-        //=============================перемещалка
+
         Point LastPoint;
 
         private void RegistrationForm_MouseMove(object sender, MouseEventArgs e)
@@ -224,8 +193,6 @@ namespace уют_
         {
 
         }
-        //=========================================
-
 
     }
 }

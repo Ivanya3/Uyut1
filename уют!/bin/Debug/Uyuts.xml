@@ -25,8 +25,36 @@
   <Property>
     <Type>Дом</Type>
     <City>Подмосковье</City>
-    <TransactionType>2</TransactionType>
-    <RentPrice>80000</RentPrice>
+    <TransactionType>1</TransactionType>
+    <BuyPrice>18000000</BuyPrice>
+    <Description>Дом в коттеджном поселке, 90 кв.м</Description>
+  </Property>
+  <Property>
+    <Type>Квартира</Type> 
+    <City>Москва</City>
+    <TransactionType>2</TransactionType> 
+    <RentPrice>50000</RentPrice>
+    <BuyPrice>12000000</BuyPrice>
+    <Description>3-комн. квартира в центре, 75 кв.м, ремонт</Description>
+  </Property>
+  <Property>
+    <Type>Дом</Type>
+    <City>Сочи</City>
+    <TransactionType>1</TransactionType>
+    <BuyPrice>25000000</BuyPrice>
+    <Description>2-этажный коттедж у моря, 150 кв.м, участок 6 соток</Description>
+  </Property>
+  <Property>
+    <Type>Квартира</Type>
+    <City>Казань</City>
+    <TransactionType>0</TransactionType>
+    <RentPrice>25000</RentPrice>
+    <Description>1-комн. квартира, 35 кв.м, евроремонт</Description>
+  </Property>
+  <Property>
+    <Type>Дом</Type>
+    <City>Подмосковье</City>
+    <TransactionType>1</TransactionType>
     <BuyPrice>18000000</BuyPrice>
     <Description>Дом в коттеджном поселке, 90 кв.м</Description>
   </Property>

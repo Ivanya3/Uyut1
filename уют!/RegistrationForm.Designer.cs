@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationForm));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.refund = new System.Windows.Forms.Label();
+            this.button_Reg = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.RegP = new System.Windows.Forms.TextBox();
@@ -42,8 +42,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Close_Button = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelL = new System.Windows.Forms.Label();
+            this.labelR = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel6.SuspendLayout();
@@ -61,34 +61,34 @@
             this.panel3.Size = new System.Drawing.Size(388, 6);
             this.panel3.TabIndex = 19;
             // 
-            // Label2
+            // refund
             // 
-            this.Label2.AutoSize = true;
-            this.Label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(181)))));
-            this.Label2.Location = new System.Drawing.Point(335, 481);
-            this.Label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(328, 24);
-            this.Label2.TabIndex = 17;
-            this.Label2.Text = "вернуться на окно авторизации";
+            this.refund.AutoSize = true;
+            this.refund.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refund.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.refund.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(181)))));
+            this.refund.Location = new System.Drawing.Point(335, 481);
+            this.refund.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.refund.Name = "refund";
+            this.refund.Size = new System.Drawing.Size(328, 24);
+            this.refund.TabIndex = 17;
+            this.refund.Text = "вернуться на окно авторизации";
             // 
-            // button1
+            // button_Reg
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(168)))), ((int)(((byte)(224)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(101)))), ((int)(((byte)(126)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(268, 389);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(473, 59);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "зарегистрироваться";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button_Reg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(168)))), ((int)(((byte)(224)))));
+            this.button_Reg.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(101)))), ((int)(((byte)(126)))));
+            this.button_Reg.FlatAppearance.BorderSize = 0;
+            this.button_Reg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Reg.ForeColor = System.Drawing.Color.White;
+            this.button_Reg.Location = new System.Drawing.Point(268, 389);
+            this.button_Reg.Margin = new System.Windows.Forms.Padding(2);
+            this.button_Reg.Name = "button_Reg";
+            this.button_Reg.Size = new System.Drawing.Size(473, 59);
+            this.button_Reg.TabIndex = 13;
+            this.button_Reg.Text = "зарегистрироваться";
+            this.button_Reg.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -115,6 +115,7 @@
             // RegP
             // 
             this.RegP.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RegP.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.RegP.Location = new System.Drawing.Point(10, 9);
             this.RegP.Margin = new System.Windows.Forms.Padding(2);
             this.RegP.Multiline = true;
@@ -155,6 +156,7 @@
             // RegL
             // 
             this.RegL.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RegL.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.RegL.Location = new System.Drawing.Point(10, 9);
             this.RegL.Margin = new System.Windows.Forms.Padding(2);
             this.RegL.Multiline = true;
@@ -202,35 +204,35 @@
             this.Close_Button.TabStop = false;
             this.Close_Button.Click += new System.EventHandler(this.Close_Button_Click);
             // 
-            // label3
+            // labelL
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(278, 262);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "*Введите логин";
+            this.labelL.AutoSize = true;
+            this.labelL.Location = new System.Drawing.Point(278, 262);
+            this.labelL.Name = "labelL";
+            this.labelL.Size = new System.Drawing.Size(81, 13);
+            this.labelL.TabIndex = 20;
+            this.labelL.Text = "Введите логин";
             // 
-            // label4
+            // labelR
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(281, 361);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 13);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "*Введите пароль";
+            this.labelR.AutoSize = true;
+            this.labelR.Location = new System.Drawing.Point(281, 361);
+            this.labelR.Name = "labelR";
+            this.labelR.Size = new System.Drawing.Size(88, 13);
+            this.labelR.TabIndex = 21;
+            this.labelR.Text = "Введите пароль";
             // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1007, 626);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelR);
+            this.Controls.Add(this.labelL);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.Label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.refund);
+            this.Controls.Add(this.button_Reg);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.label1);
@@ -256,8 +258,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label Label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label refund;
+        private System.Windows.Forms.Button button_Reg;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox RegP;
@@ -267,8 +269,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox Close_Button;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelL;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelR;
     }
 }

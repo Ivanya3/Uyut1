@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutorizationForm));
-            this.label1 = new System.Windows.Forms.Label();
+            this.title_name = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.AutL = new System.Windows.Forms.TextBox();
@@ -51,19 +51,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.Close_Button)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // title_name
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.title_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(360, 117);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 39);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "авторизация";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.title_name.AutoSize = true;
+            this.title_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.title_name.Location = new System.Drawing.Point(360, 117);
+            this.title_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.title_name.Name = "title_name";
+            this.title_name.Size = new System.Drawing.Size(236, 39);
+            this.title_name.TabIndex = 3;
+            this.title_name.Text = "авторизация";
+            this.title_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel6
             // 
@@ -227,7 +227,7 @@
             this.Controls.Add(this.Button_Main_Autorization);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.title_name);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AutorizationForm";
@@ -248,7 +248,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label title_name;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox AutL;
         private System.Windows.Forms.TextBox AutP;

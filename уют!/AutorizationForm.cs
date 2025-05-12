@@ -84,7 +84,7 @@ namespace уют_
         {
 
         }
-        //перемещение--------------------------------------------------------------------
+        //перемещение----------------------------------------------------------
         Point LastPoint;
 
         private void AutorizationForm_MouseMove(object sender, MouseEventArgs e)
@@ -102,40 +102,34 @@ namespace уют_
         }
         //конец кода для перемещения------------------------------------------------------
 
-
-
-
-
-
-
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
             string login = AutL.Text.Trim(); 
 
             if (string.IsNullOrEmpty(login))
             {
-                ShowError("*Введите логин");
+                ShowError("Введите логин");
                 Button_Main_Autorization.Enabled = false;
                 return;
             }
 
             if (login.Length < 3)
             {
-                ShowError("*Логин должен быть от 3 символов");
+                ShowError("Логин должен быть от 3 символов");
                 Button_Main_Autorization.Enabled = false;
                 return;
             }
 
             if (login.Length > 20)
             {
-                ShowError("*Логин должен быть до 20 символов");
+                ShowError("Логин должен быть до 20 символов");
                 Button_Main_Autorization.Enabled = false;
                 return;
             }
 
             if (!System.Text.RegularExpressions.Regex.IsMatch(login, @"^[a-zA-Z0-9_]+$"))
             {
-                ShowError("*Только буквы (a-z), цифры (0-9) и _");
+                ShowError("Только буквы (a-z), цифры (0-9) и _");
                 Button_Main_Autorization.Enabled = false;
                 return;
             }
@@ -167,14 +161,14 @@ namespace уют_
             // Ищем аккаунт по логину
             Account userAccount = AccountManager.FindAccount(login);
 
-            if (userAccount == null)
+            if (AccountManager.FindAccount(login) == null)
             {
                 MessageBox.Show("Аккаунт не найден!");
                 return;
             }
 
             // Проверяем пароль 
-            bool isPasswordCorrect = PasswordHasher.VerifyPassword(password, userAccount.Password);
+            bool isPasswordCorrect = PasswordHasher.VerifyPassword(password, AccountManager.FindAccount(login).Password);
 
             if (!isPasswordCorrect)
             {
@@ -183,7 +177,7 @@ namespace уют_
             }
 
             // сохраняем пользователя и открываем главную форму
-            AppContext.CurrentUser = userAccount;
+            AppContext.CurrentUser = AccountManager.FindAccount(login);
 
             MainForm mainForm = new MainForm();
             mainForm.Show();

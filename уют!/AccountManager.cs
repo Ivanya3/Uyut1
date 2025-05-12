@@ -17,7 +17,6 @@ public static class AccountManager
         {
             if (!File.Exists(file))
             {
-                // Если файла нет — создаём новый XML
                 XDocument newDoc = new XDocument(
                     new XElement("Accounts")
                 );
@@ -75,7 +74,6 @@ public static class AccountManager
         }
     }
 
-    // Новый метод для поиска аккаунта по логину
     public static Account FindAccount(string login)
     {
         List<Account> accounts = LoadAccounts();
