@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Linq;
 
-public static class PropertyManager
+public static class PropertyManager// настройки класса недвижимости
 {
-    private static string _filePath = "Uyuts.xml";
 
     public static List<Property> LoadProperties()
     {
-        List<Property> properties = new List<Property>();
+        List<Property> properties = new List<Property>(); //создаем переменую по классу Property
 
         try
         {
-            if (!File.Exists(_filePath))
+            if (!File.Exists("Uyuts.xml"))// проверяем, есть ли файл
                 return properties;
 
-            XDocument doc = XDocument.Load(_filePath);
+            XDocument doc = XDocument.Load("Uyuts.xml"); //скачиваем файл в doc
 
 
             foreach (XElement propElement in doc.Root.Elements("Property"))
             {
-                decimal rentPrice;
+                decimal rentPrice;//decimal используется, так как rentPrice и buyPrice могут не принимать значение 
                 decimal buyPrice;
 
                 bool hasRentPrice = decimal.TryParse(

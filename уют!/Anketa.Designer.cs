@@ -34,19 +34,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.comboBox_vopros1 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.comboBox_vopros2 = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox_vopros3 = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.panel_are = new System.Windows.Forms.Panel();
+            this.comboBox_vopros4_ot = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
@@ -66,8 +67,16 @@
             this.panel19 = new System.Windows.Forms.Panel();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox_vopros4_do = new System.Windows.Forms.ComboBox();
+            this.panel_pok = new System.Windows.Forms.Panel();
+            this.comboBox_vopros5_do = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox_vopros5_ot = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClousBox)).BeginInit();
             this.panel6.SuspendLayout();
@@ -77,9 +86,8 @@
             this.panel3.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel16.SuspendLayout();
+            this.panel_are.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel17.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -92,6 +100,7 @@
             this.panel20.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel19.SuspendLayout();
+            this.panel_pok.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -106,6 +115,7 @@
             // 
             // ClousBox
             // 
+            this.ClousBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClousBox.Image = ((System.Drawing.Image)(resources.GetObject("ClousBox.Image")));
             this.ClousBox.Location = new System.Drawing.Point(979, 0);
             this.ClousBox.Margin = new System.Windows.Forms.Padding(2);
@@ -149,6 +159,15 @@
             this.panel8.Size = new System.Drawing.Size(406, 43);
             this.panel8.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Покупка/аренда:";
+            // 
             // comboBox_vopros1
             // 
             this.comboBox_vopros1.FormattingEnabled = true;
@@ -156,7 +175,6 @@
             this.comboBox_vopros1.Name = "comboBox_vopros1";
             this.comboBox_vopros1.Size = new System.Drawing.Size(400, 21);
             this.comboBox_vopros1.TabIndex = 0;
-            this.comboBox_vopros1.Text = "покупка/аренда";
             // 
             // panel2
             // 
@@ -177,6 +195,15 @@
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(406, 43);
             this.panel14.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Квартика или дом:";
             // 
             // comboBox_vopros2
             // 
@@ -199,73 +226,70 @@
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.White;
-            this.panel15.Controls.Add(this.comboBox3);
+            this.panel15.Controls.Add(this.label4);
+            this.panel15.Controls.Add(this.comboBox_vopros3);
             this.panel15.Location = new System.Drawing.Point(8, 8);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(406, 43);
             this.panel15.TabIndex = 1;
             // 
-            // comboBox3
+            // label4
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(3, 4);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(400, 21);
-            this.comboBox3.TabIndex = 0;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(5, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Количество комнат:";
+            // 
+            // comboBox_vopros3
+            // 
+            this.comboBox_vopros3.FormattingEnabled = true;
+            this.comboBox_vopros3.Location = new System.Drawing.Point(2, 19);
+            this.comboBox_vopros3.Name = "comboBox_vopros3";
+            this.comboBox_vopros3.Size = new System.Drawing.Size(400, 21);
+            this.comboBox_vopros3.TabIndex = 0;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(168)))), ((int)(((byte)(224)))));
-            this.panel4.Controls.Add(this.panel16);
+            this.panel4.Controls.Add(this.panel_are);
             this.panel4.Location = new System.Drawing.Point(45, 358);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(423, 59);
             this.panel4.TabIndex = 19;
             // 
-            // panel16
+            // panel_are
             // 
-            this.panel16.BackColor = System.Drawing.Color.White;
-            this.panel16.Controls.Add(this.comboBox4);
-            this.panel16.Location = new System.Drawing.Point(8, 8);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(406, 43);
-            this.panel16.TabIndex = 1;
+            this.panel_are.BackColor = System.Drawing.Color.White;
+            this.panel_are.Controls.Add(this.comboBox_vopros4_do);
+            this.panel_are.Controls.Add(this.label7);
+            this.panel_are.Controls.Add(this.label6);
+            this.panel_are.Controls.Add(this.label5);
+            this.panel_are.Controls.Add(this.comboBox_vopros4_ot);
+            this.panel_are.Location = new System.Drawing.Point(8, 8);
+            this.panel_are.Name = "panel_are";
+            this.panel_are.Size = new System.Drawing.Size(406, 43);
+            this.panel_are.TabIndex = 1;
             // 
-            // comboBox4
+            // comboBox_vopros4_ot
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(3, 4);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(400, 21);
-            this.comboBox4.TabIndex = 0;
+            this.comboBox_vopros4_ot.FormattingEnabled = true;
+            this.comboBox_vopros4_ot.Location = new System.Drawing.Point(23, 19);
+            this.comboBox_vopros4_ot.Name = "comboBox_vopros4_ot";
+            this.comboBox_vopros4_ot.Size = new System.Drawing.Size(150, 21);
+            this.comboBox_vopros4_ot.TabIndex = 0;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(168)))), ((int)(((byte)(224)))));
-            this.panel5.Controls.Add(this.panel17);
+            this.panel5.Controls.Add(this.panel_pok);
             this.panel5.Location = new System.Drawing.Point(45, 444);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(423, 59);
             this.panel5.TabIndex = 20;
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.Color.White;
-            this.panel17.Controls.Add(this.comboBox5);
-            this.panel17.Location = new System.Drawing.Point(8, 8);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(406, 43);
-            this.panel17.TabIndex = 1;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(3, 4);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(400, 21);
-            this.comboBox5.TabIndex = 0;
             // 
             // panel7
             // 
@@ -289,7 +313,7 @@
             // comboBox6
             // 
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(3, 4);
+            this.comboBox6.Location = new System.Drawing.Point(2, 19);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(400, 21);
             this.comboBox6.TabIndex = 0;
@@ -441,24 +465,98 @@
             this.button1.TabIndex = 27;
             this.button1.Text = "готово";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label2
+            // label5
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Покупка/аренда:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(5, 5);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Цена(аренда):";
             // 
-            // label3
+            // label6
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Квартика или дом:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(18, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "от";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(196, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(19, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "до";
+            // 
+            // comboBox_vopros4_do
+            // 
+            this.comboBox_vopros4_do.FormattingEnabled = true;
+            this.comboBox_vopros4_do.Location = new System.Drawing.Point(221, 19);
+            this.comboBox_vopros4_do.Name = "comboBox_vopros4_do";
+            this.comboBox_vopros4_do.Size = new System.Drawing.Size(150, 21);
+            this.comboBox_vopros4_do.TabIndex = 7;
+            // 
+            // panel_pok
+            // 
+            this.panel_pok.BackColor = System.Drawing.Color.White;
+            this.panel_pok.Controls.Add(this.comboBox_vopros5_do);
+            this.panel_pok.Controls.Add(this.label8);
+            this.panel_pok.Controls.Add(this.label9);
+            this.panel_pok.Controls.Add(this.label10);
+            this.panel_pok.Controls.Add(this.comboBox_vopros5_ot);
+            this.panel_pok.Location = new System.Drawing.Point(8, 8);
+            this.panel_pok.Name = "panel_pok";
+            this.panel_pok.Size = new System.Drawing.Size(406, 43);
+            this.panel_pok.TabIndex = 2;
+            // 
+            // comboBox_vopros5_do
+            // 
+            this.comboBox_vopros5_do.FormattingEnabled = true;
+            this.comboBox_vopros5_do.Location = new System.Drawing.Point(221, 19);
+            this.comboBox_vopros5_do.Name = "comboBox_vopros5_do";
+            this.comboBox_vopros5_do.Size = new System.Drawing.Size(150, 21);
+            this.comboBox_vopros5_do.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(196, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(19, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "до";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(18, 13);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "от";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(5, 5);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(83, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Цена(покупка):";
+            // 
+            // comboBox_vopros5_ot
+            // 
+            this.comboBox_vopros5_ot.FormattingEnabled = true;
+            this.comboBox_vopros5_ot.Location = new System.Drawing.Point(23, 19);
+            this.comboBox_vopros5_ot.Name = "comboBox_vopros5_ot";
+            this.comboBox_vopros5_ot.Size = new System.Drawing.Size(150, 21);
+            this.comboBox_vopros5_ot.TabIndex = 0;
             // 
             // Anketa
             // 
@@ -493,10 +591,11 @@
             this.panel14.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
+            this.panel_are.ResumeLayout(false);
+            this.panel_are.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
@@ -509,6 +608,8 @@
             this.panel20.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
+            this.panel_pok.ResumeLayout(false);
+            this.panel_pok.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -536,11 +637,9 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.ComboBox comboBox_vopros2;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox comboBox_vopros3;
+        private System.Windows.Forms.Panel panel_are;
+        private System.Windows.Forms.ComboBox comboBox_vopros4_ot;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Panel panel23;
@@ -555,5 +654,16 @@
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox_vopros4_do;
+        private System.Windows.Forms.Panel panel_pok;
+        private System.Windows.Forms.ComboBox comboBox_vopros5_do;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox_vopros5_ot;
     }
 }

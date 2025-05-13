@@ -52,18 +52,18 @@
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel_choice = new System.Windows.Forms.Panel();
-            this.panel_tr = new System.Windows.Forms.Panel();
-            this.label_Tr = new System.Windows.Forms.Label();
-            this.panel_pok = new System.Windows.Forms.Panel();
-            this.label_pok = new System.Windows.Forms.Label();
-            this.panelAll = new System.Windows.Forms.Panel();
-            this.label_All = new System.Windows.Forms.Label();
-            this.panelKV = new System.Windows.Forms.Panel();
-            this.label_kv = new System.Windows.Forms.Label();
+            this.panelAnk = new System.Windows.Forms.Panel();
+            this.label_Ank = new System.Windows.Forms.Label();
             this.panel_dom = new System.Windows.Forms.Panel();
             this.label_dom = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panelKV = new System.Windows.Forms.Panel();
+            this.label_kv = new System.Windows.Forms.Label();
+            this.panelAll = new System.Windows.Forms.Panel();
+            this.label_All = new System.Windows.Forms.Label();
+            this.panel_pok = new System.Windows.Forms.Panel();
+            this.label_pok = new System.Windows.Forms.Label();
+            this.panel_tr = new System.Windows.Forms.Panel();
+            this.label_Tr = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Close_Button)).BeginInit();
             this.panel2.SuspendLayout();
@@ -76,12 +76,12 @@
             this.panelCardTemplate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel_choice.SuspendLayout();
-            this.panel_tr.SuspendLayout();
-            this.panel_pok.SuspendLayout();
-            this.panelAll.SuspendLayout();
-            this.panelKV.SuspendLayout();
+            this.panelAnk.SuspendLayout();
             this.panel_dom.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelKV.SuspendLayout();
+            this.panelAll.SuspendLayout();
+            this.panel_pok.SuspendLayout();
+            this.panel_tr.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -283,7 +283,7 @@
             this.panelCardTemplate.Location = new System.Drawing.Point(10, 10);
             this.panelCardTemplate.Margin = new System.Windows.Forms.Padding(10);
             this.panelCardTemplate.Name = "panelCardTemplate";
-            this.panelCardTemplate.Size = new System.Drawing.Size(266, 282);
+            this.panelCardTemplate.Size = new System.Drawing.Size(254, 313);
             this.panelCardTemplate.TabIndex = 1;
             // 
             // label6
@@ -324,14 +324,14 @@
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(0, 0);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(266, 158);
+            this.pictureBox5.Size = new System.Drawing.Size(254, 142);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
             // panel_choice
             // 
-            this.panel_choice.Controls.Add(this.panel1);
+            this.panel_choice.Controls.Add(this.panelAnk);
             this.panel_choice.Controls.Add(this.panel_dom);
             this.panel_choice.Controls.Add(this.panelKV);
             this.panel_choice.Controls.Add(this.panelAll);
@@ -342,89 +342,26 @@
             this.panel_choice.Size = new System.Drawing.Size(205, 207);
             this.panel_choice.TabIndex = 8;
             // 
-            // panel_tr
+            // panelAnk
             // 
-            this.panel_tr.BackColor = System.Drawing.Color.White;
-            this.panel_tr.Controls.Add(this.label_Tr);
-            this.panel_tr.Location = new System.Drawing.Point(0, 69);
-            this.panel_tr.Name = "panel_tr";
-            this.panel_tr.Size = new System.Drawing.Size(205, 34);
-            this.panel_tr.TabIndex = 1;
-            this.panel_tr.Click += new System.EventHandler(this.panel_tr_Click);
+            this.panelAnk.BackColor = System.Drawing.Color.White;
+            this.panelAnk.Controls.Add(this.label_Ank);
+            this.panelAnk.Location = new System.Drawing.Point(0, 171);
+            this.panelAnk.Name = "panelAnk";
+            this.panelAnk.Size = new System.Drawing.Size(205, 34);
+            this.panelAnk.TabIndex = 6;
+            this.panelAnk.Click += new System.EventHandler(this.panelAnk_Click);
             // 
-            // label_Tr
+            // label_Ank
             // 
-            this.label_Tr.AutoSize = true;
-            this.label_Tr.BackColor = System.Drawing.Color.White;
-            this.label_Tr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Tr.Location = new System.Drawing.Point(61, 6);
-            this.label_Tr.Name = "label_Tr";
-            this.label_Tr.Size = new System.Drawing.Size(67, 20);
-            this.label_Tr.TabIndex = 1;
-            this.label_Tr.Text = "Аренда";
-            // 
-            // panel_pok
-            // 
-            this.panel_pok.BackColor = System.Drawing.Color.White;
-            this.panel_pok.Controls.Add(this.label_pok);
-            this.panel_pok.Location = new System.Drawing.Point(0, 35);
-            this.panel_pok.Name = "panel_pok";
-            this.panel_pok.Size = new System.Drawing.Size(205, 34);
-            this.panel_pok.TabIndex = 2;
-            this.panel_pok.Click += new System.EventHandler(this.panel_pok_Click);
-            // 
-            // label_pok
-            // 
-            this.label_pok.AutoSize = true;
-            this.label_pok.BackColor = System.Drawing.Color.White;
-            this.label_pok.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_pok.Location = new System.Drawing.Point(61, 6);
-            this.label_pok.Name = "label_pok";
-            this.label_pok.Size = new System.Drawing.Size(71, 20);
-            this.label_pok.TabIndex = 1;
-            this.label_pok.Text = "Покупка";
-            // 
-            // panelAll
-            // 
-            this.panelAll.BackColor = System.Drawing.Color.White;
-            this.panelAll.Controls.Add(this.label_All);
-            this.panelAll.Location = new System.Drawing.Point(0, 1);
-            this.panelAll.Name = "panelAll";
-            this.panelAll.Size = new System.Drawing.Size(205, 34);
-            this.panelAll.TabIndex = 3;
-            // 
-            // label_All
-            // 
-            this.label_All.AutoSize = true;
-            this.label_All.BackColor = System.Drawing.Color.White;
-            this.label_All.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_All.Location = new System.Drawing.Point(41, 3);
-            this.label_All.Name = "label_All";
-            this.label_All.Size = new System.Drawing.Size(117, 20);
-            this.label_All.TabIndex = 1;
-            this.label_All.Text = "все категории";
-            this.label_All.Click += new System.EventHandler(this.label_All_Click);
-            // 
-            // panelKV
-            // 
-            this.panelKV.BackColor = System.Drawing.Color.White;
-            this.panelKV.Controls.Add(this.label_kv);
-            this.panelKV.Location = new System.Drawing.Point(0, 103);
-            this.panelKV.Name = "panelKV";
-            this.panelKV.Size = new System.Drawing.Size(205, 34);
-            this.panelKV.TabIndex = 4;
-            // 
-            // label_kv
-            // 
-            this.label_kv.AutoSize = true;
-            this.label_kv.BackColor = System.Drawing.Color.White;
-            this.label_kv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_kv.Location = new System.Drawing.Point(56, 6);
-            this.label_kv.Name = "label_kv";
-            this.label_kv.Size = new System.Drawing.Size(82, 20);
-            this.label_kv.TabIndex = 1;
-            this.label_kv.Text = "квартиры";
-            this.label_kv.Click += new System.EventHandler(this.label_kv_Click);
+            this.label_Ank.AutoSize = true;
+            this.label_Ank.BackColor = System.Drawing.Color.White;
+            this.label_Ank.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Ank.Location = new System.Drawing.Point(46, 7);
+            this.label_Ank.Name = "label_Ank";
+            this.label_Ank.Size = new System.Drawing.Size(95, 20);
+            this.label_Ank.TabIndex = 1;
+            this.label_Ank.Text = "моя анкета";
             // 
             // panel_dom
             // 
@@ -447,25 +384,89 @@
             this.label_dom.Text = "дома";
             this.label_dom.Click += new System.EventHandler(this.label_dom_Click);
             // 
-            // panel1
+            // panelKV
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(0, 171);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(205, 34);
-            this.panel1.TabIndex = 6;
+            this.panelKV.BackColor = System.Drawing.Color.White;
+            this.panelKV.Controls.Add(this.label_kv);
+            this.panelKV.Location = new System.Drawing.Point(0, 103);
+            this.panelKV.Name = "panelKV";
+            this.panelKV.Size = new System.Drawing.Size(205, 34);
+            this.panelKV.TabIndex = 4;
             // 
-            // label2
+            // label_kv
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(46, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "моя анкета";
+            this.label_kv.AutoSize = true;
+            this.label_kv.BackColor = System.Drawing.Color.White;
+            this.label_kv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_kv.Location = new System.Drawing.Point(56, 6);
+            this.label_kv.Name = "label_kv";
+            this.label_kv.Size = new System.Drawing.Size(82, 20);
+            this.label_kv.TabIndex = 1;
+            this.label_kv.Text = "квартиры";
+            this.label_kv.Click += new System.EventHandler(this.label_kv_Click);
+            // 
+            // panelAll
+            // 
+            this.panelAll.BackColor = System.Drawing.Color.White;
+            this.panelAll.Controls.Add(this.label_All);
+            this.panelAll.Location = new System.Drawing.Point(0, 1);
+            this.panelAll.Name = "panelAll";
+            this.panelAll.Size = new System.Drawing.Size(205, 34);
+            this.panelAll.TabIndex = 3;
+            // 
+            // label_All
+            // 
+            this.label_All.AutoSize = true;
+            this.label_All.BackColor = System.Drawing.Color.White;
+            this.label_All.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_All.Location = new System.Drawing.Point(41, 3);
+            this.label_All.Name = "label_All";
+            this.label_All.Size = new System.Drawing.Size(117, 20);
+            this.label_All.TabIndex = 1;
+            this.label_All.Text = "все категории";
+            this.label_All.Click += new System.EventHandler(this.label_All_Click);
+            // 
+            // panel_pok
+            // 
+            this.panel_pok.BackColor = System.Drawing.Color.White;
+            this.panel_pok.Controls.Add(this.label_pok);
+            this.panel_pok.Location = new System.Drawing.Point(0, 35);
+            this.panel_pok.Name = "panel_pok";
+            this.panel_pok.Size = new System.Drawing.Size(205, 34);
+            this.panel_pok.TabIndex = 2;
+            this.panel_pok.Click += new System.EventHandler(this.panel_pok_Click);
+            // 
+            // label_pok
+            // 
+            this.label_pok.AutoSize = true;
+            this.label_pok.BackColor = System.Drawing.Color.White;
+            this.label_pok.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_pok.Location = new System.Drawing.Point(61, 6);
+            this.label_pok.Name = "label_pok";
+            this.label_pok.Size = new System.Drawing.Size(71, 20);
+            this.label_pok.TabIndex = 1;
+            this.label_pok.Text = "Покупка";
+            // 
+            // panel_tr
+            // 
+            this.panel_tr.BackColor = System.Drawing.Color.White;
+            this.panel_tr.Controls.Add(this.label_Tr);
+            this.panel_tr.Location = new System.Drawing.Point(0, 69);
+            this.panel_tr.Name = "panel_tr";
+            this.panel_tr.Size = new System.Drawing.Size(205, 34);
+            this.panel_tr.TabIndex = 1;
+            this.panel_tr.Click += new System.EventHandler(this.panel_tr_Click);
+            // 
+            // label_Tr
+            // 
+            this.label_Tr.AutoSize = true;
+            this.label_Tr.BackColor = System.Drawing.Color.White;
+            this.label_Tr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Tr.Location = new System.Drawing.Point(61, 6);
+            this.label_Tr.Name = "label_Tr";
+            this.label_Tr.Size = new System.Drawing.Size(67, 20);
+            this.label_Tr.TabIndex = 1;
+            this.label_Tr.Text = "Аренда";
             // 
             // MainForm
             // 
@@ -503,18 +504,18 @@
             this.panelCardTemplate.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel_choice.ResumeLayout(false);
-            this.panel_tr.ResumeLayout(false);
-            this.panel_tr.PerformLayout();
-            this.panel_pok.ResumeLayout(false);
-            this.panel_pok.PerformLayout();
-            this.panelAll.ResumeLayout(false);
-            this.panelAll.PerformLayout();
-            this.panelKV.ResumeLayout(false);
-            this.panelKV.PerformLayout();
+            this.panelAnk.ResumeLayout(false);
+            this.panelAnk.PerformLayout();
             this.panel_dom.ResumeLayout(false);
             this.panel_dom.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelKV.ResumeLayout(false);
+            this.panelKV.PerformLayout();
+            this.panelAll.ResumeLayout(false);
+            this.panelAll.PerformLayout();
+            this.panel_pok.ResumeLayout(false);
+            this.panel_pok.PerformLayout();
+            this.panel_tr.ResumeLayout(false);
+            this.panel_tr.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -555,8 +556,8 @@
         private System.Windows.Forms.Label label_kv;
         private System.Windows.Forms.Panel panel_dom;
         private System.Windows.Forms.Label label_dom;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panelAnk;
+        private System.Windows.Forms.Label label_Ank;
     }
 }
 

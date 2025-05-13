@@ -63,8 +63,10 @@ namespace уют_
 
                 foreach (XElement propertyElement in doc.Root.Elements("Property"))//идем по всем элементам doc, то есть Property
                 {
+                    MessageBox.Show($" {propertyElement.Element("Id")?.Value}");
                     Property prop = new Property//создаем переменную класса Property
                     {
+                        Id = propertyElement.Element("Id")?.Value,
                         Type = propertyElement.Element("Type")?.Value,//присваиваем Type соответствующий элемент Property
                         City = propertyElement.Element("City")?.Value,//присваиваем City соответствующий элемент Property
                         TransactionType = int.Parse(propertyElement.Element("TransactionType")?.Value ?? "0"),//присваиваем TransactionType соответствующий элемент Property
@@ -101,7 +103,7 @@ namespace уют_
                 // Создаем копию шаблона
                 Panel newCard = new Panel// создаем панель по образцу
                 {
-                    Name = $"panelCardTemplate{cardCounter++}",
+                    Name = $"{cardCounter++}",
                     Size = templateCard.Size,
                     BackColor = templateCard.BackColor,
                     BorderStyle = templateCard.BorderStyle,
@@ -191,16 +193,11 @@ namespace уют_
             }
         }
 
-
-        //=================================================================
-
         private void pictureBox1_Click(object sender, EventArgs e)// для выхода при нажатии на кнопку закрытия
         {
             Close_Button.BackColor = Color.Red;//для красоты
             Application.Exit();//выходим
         }
-        
-        
         
         Point LastPoint;// создаем переменную для запоминания расположения
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
@@ -224,14 +221,12 @@ namespace уют_
             this.Hide();//закрываем существующие (MainForm)
         }
 
-
         private void labelAnk_Click(object sender, EventArgs e)//открытие анкеты
         {
             Anketa anketaForm = new Anketa();//создаем новое окно анкеты
             anketaForm.Show();//открываем его
             this.Hide();//закрываем существующие (MainForm)
         }
-
 
         private void panelHeader_Click(object sender, EventArgs e)
         {
@@ -254,7 +249,7 @@ namespace уют_
                     // Создаем копию шаблона
                     Panel newCard = new Panel
                     {
-                        Name = $"panelCardTemplate{cardCounter++}",
+                        Name = $"{cardCounter++}",
                         Size = templateCard.Size,
                         BackColor = templateCard.BackColor,
                         BorderStyle = templateCard.BorderStyle,
@@ -287,7 +282,7 @@ namespace уют_
                     // Создаем копию шаблона
                     Panel newCard = new Panel
                     {
-                        Name = $"panelCardTemplate{cardCounter++}",
+                        Name = $"{cardCounter++}",
                         Size = templateCard.Size,
                         BackColor = templateCard.BackColor,
                         BorderStyle = templateCard.BorderStyle,
@@ -318,7 +313,7 @@ namespace уют_
                 // Создаем копию шаблона
                 Panel newCard = new Panel
                 {
-                    Name = $"panelCardTemplate{cardCounter++}",
+                    Name = $"{cardCounter++}",
                     Size = templateCard.Size,
                     BackColor = templateCard.BackColor,
                     BorderStyle = templateCard.BorderStyle,
@@ -350,7 +345,7 @@ namespace уют_
                     // Создаем копию шаблона
                     Panel newCard = new Panel
                     {
-                        Name = $"panelCardTemplate{cardCounter++}",
+                        Name = $"{cardCounter++}",
                         Size = templateCard.Size,
                         BackColor = templateCard.BackColor,
                         BorderStyle = templateCard.BorderStyle,
@@ -383,7 +378,7 @@ namespace уют_
                     // Создаем копию шаблона
                     Panel newCard = new Panel
                     {
-                        Name = $"panelCardTemplate{cardCounter++}",
+                        Name = $"{cardCounter++}",
                         Size = templateCard.Size,
                         BackColor = templateCard.BackColor,
                         BorderStyle = templateCard.BorderStyle,
@@ -397,6 +392,59 @@ namespace уют_
                 }
             }
 
+        }
+
+        private void panelAnk_Click(object sender, EventArgs e)
+        {
+            panel_choice.Visible = false;
+            flowMain.Controls.Clear();
+
+            var properties = PropertyManager.LoadProperties();
+
+            int count = 0;
+
+            Account currentUser = AppContext.CurrentUser;
+
+            category.Text = label_Ank.Text;
+            int TT = int.Parse(currentUser.TransactionTypeAnk);
+
+            for (int i = 0; i < properties.Count; i++)
+            {
+                if (TT == 2)
+                {
+                    // Создаем копию шаблона
+                    Panel newCard = new Panel
+                    {
+                        Name = $"{cardCounter++}",
+                        Size = templateCard.Size,
+                        BackColor = templateCard.BackColor,
+                        BorderStyle = templateCard.BorderStyle,
+                        Margin = templateCard.Margin
+                    };
+
+                    // Копируем дочерние элементы
+                    CloneChildControls(templateCard, newCard, i);
+
+                    flowMain.Controls.Add(newCard);
+                }
+                else if (properties[i].TransactionType == TT || properties[i].TransactionType ==2)
+                {
+                    // Создаем копию шаблона
+                    Panel newCard = new Panel
+                    {
+                        Name = $"{cardCounter++}",
+                        Size = templateCard.Size,
+                        BackColor = templateCard.BackColor,
+                        BorderStyle = templateCard.BorderStyle,
+                        Margin = templateCard.Margin
+                    };
+
+                    // Копируем дочерние элементы
+                    CloneChildControls(templateCard, newCard, i);
+
+                    flowMain.Controls.Add(newCard);
+                }
+            }
         }
     }
 }

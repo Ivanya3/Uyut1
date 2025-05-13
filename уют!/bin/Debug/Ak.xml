@@ -3,9 +3,34 @@
   <Account>
     <Login>ivan</Login>
     <Password>7sWNlYITpF+h9iLoU/vbQZohAaC9MyvlHDfH/AQWV6dLluCD</Password>
+    <TransactionTypeAnk>0</TransactionTypeAnk>
+    <TypeAnk>дом</TypeAnk>
+    <Rooms>4</Rooms>
+    <RentPriceOt>10 000</RentPriceOt>
+    <RentPriceDo>30 000</RentPriceDo>
+    <BuyPriceOt>1 000 000</BuyPriceOt>
+    <BuyPriceDo>10 000 000</BuyPriceDo>
   </Account>
   <Account>
     <Login>ivan2</Login>
     <Password>cS6X888lTchs623/IajzJ0k3IOtQoRXjOig/GzMw4UIBEblB</Password>
+    <TransactionTypeAnk>2</TransactionTypeAnk>
+    <TypeAnk>все</TypeAnk>
+    <Rooms>все</Rooms>
+    <RentPriceOt>все</RentPriceOt>
+    <RentPriceDo>все</RentPriceDo>
+    <BuyPriceOt>все</BuyPriceOt>
+    <BuyPriceDo>все</BuyPriceDo>
+  </Account>
+  <Account>
+    <Login>ivan3</Login>
+    <Password>bUrxVKxMNTtZfw1rOE+FfhU0QeZ5GidgzW2EpgXgF58k1zao</Password>
+    <TransactionTypeAnk>2</TransactionTypeAnk>
+    <TypeAnk>все</TypeAnk>
+    <Rooms>все</Rooms>
+    <RentPriceOt>все</RentPriceOt>
+    <RentPriceDo>все</RentPriceDo>
+    <BuyPriceOt>все</BuyPriceOt>
+    <BuyPriceDo>все</BuyPriceDo>
   </Account>
 </Accounts>

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Properties>
   <Property>
+	<Id>101</Id>
     <Type>Квартира</Type> 
     <City>Москва</City>
     <TransactionType>2</TransactionType> 
@@ -9,6 +10,7 @@
     <Description>3-комн. квартира в центре, 75 кв.м, ремонт</Description>
   </Property>
   <Property>
+	<Id>102</Id>
     <Type>Дом</Type>
     <City>Сочи</City>
     <TransactionType>1</TransactionType>
@@ -16,6 +18,7 @@
     <Description>2-этажный коттедж у моря, 150 кв.м, участок 6 соток</Description>
   </Property>
   <Property>
+	<Id>103</Id>
     <Type>Квартира</Type>
     <City>Казань</City>
     <TransactionType>0</TransactionType>
@@ -23,6 +26,7 @@
     <Description>1-комн. квартира, 35 кв.м, евроремонт</Description>
   </Property>
   <Property>
+	<Id>104</Id>
     <Type>Дом</Type>
     <City>Подмосковье</City>
     <TransactionType>1</TransactionType>
@@ -30,6 +34,7 @@
     <Description>Дом в коттеджном поселке, 90 кв.м</Description>
   </Property>
   <Property>
+	<Id>105</Id>
     <Type>Квартира</Type> 
     <City>Москва</City>
     <TransactionType>2</TransactionType> 
@@ -38,6 +43,7 @@
     <Description>3-комн. квартира в центре, 75 кв.м, ремонт</Description>
   </Property>
   <Property>
+	<Id>106</Id>
     <Type>Дом</Type>
     <City>Сочи</City>
     <TransactionType>1</TransactionType>
@@ -45,6 +51,7 @@
     <Description>2-этажный коттедж у моря, 150 кв.м, участок 6 соток</Description>
   </Property>
   <Property>
+	<Id>107</Id>
     <Type>Квартира</Type>
     <City>Казань</City>
     <TransactionType>0</TransactionType>
@@ -52,6 +59,7 @@
     <Description>1-комн. квартира, 35 кв.м, евроремонт</Description>
   </Property>
   <Property>
+	<Id>108</Id>
     <Type>Дом</Type>
     <City>Подмосковье</City>
     <TransactionType>1</TransactionType>

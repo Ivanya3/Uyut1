@@ -49,7 +49,7 @@ namespace уют_
                 Login = RegL.Text,
                 Password = RegP.Text
             };
-
+            
 
             MainForm mainForm = new MainForm();
             mainForm.Show();

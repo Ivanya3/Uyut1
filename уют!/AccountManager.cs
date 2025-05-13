@@ -33,7 +33,17 @@ public static class AccountManager
 
                 if (!string.IsNullOrEmpty(login) && !string.IsNullOrEmpty(password))
                 {
-                    accounts.Add(new Account { Login = login, Password = password });
+                    accounts.Add(new Account { 
+                        Login = login,
+                        Password = password,
+                        TransactionTypeAnk = accountElement.Element("TransactionTypeAnk")?.Value ?? "2",
+                        TypeAnk = accountElement.Element("TypeAnk")?.Value ?? "Все",
+                        Rooms = accountElement.Element("Rooms")?.Value ?? "все",
+                        RentPriceOt = accountElement.Element("RentPriceOt")?.Value ?? "все",
+                        RentPriceDo = accountElement.Element("RentPriceDo")?.Value ?? "все",
+                        BuyPriceOt = accountElement.Element("BuyPriceOt")?.Value ?? "все",
+                        BuyPriceDo = accountElement.Element("BuyPriceDo")?.Value ?? "все"
+                    });
                 }
             }
         }
@@ -62,7 +72,14 @@ public static class AccountManager
             doc.Root.Add(
                 new XElement("Account",
                     new XElement("Login", login),
-                    new XElement("Password", password)
+                    new XElement("Password", password),
+                    new XElement("TransactionTypeAnk", "2"),
+                    new XElement("TypeAnk", "Все"),
+                    new XElement("Rooms", "все"),
+                    new XElement("RentPriceOt", "все"),
+                    new XElement("RentPriceDo", "все"),
+                    new XElement("BuyPriceOt", "все"),
+                    new XElement("BuyPriceDo", "все")
                 ));
             doc.Save(file);
             return true;
@@ -70,6 +87,39 @@ public static class AccountManager
         catch (Exception ex)
         {
             MessageBox.Show("Ошибка сохранения: " + ex.Message);
+            return false;
+        }
+    }
+    public static bool UpdateAccount(Account updatedAccount)
+    {
+        try
+        {
+            XDocument doc = XDocument.Load(file);
+
+            // Находим аккаунт для обновления
+            XElement accountElement = doc.Root.Elements("Account")
+                .FirstOrDefault(a => a.Element("Login")?.Value == updatedAccount.Login);
+
+            if (accountElement != null)
+            {
+                // Обновляем все поля
+                accountElement.Element("Password").Value = updatedAccount.Password;
+                accountElement.Element("TransactionTypeAnk").Value = updatedAccount.TransactionTypeAnk;
+                accountElement.Element("TypeAnk").Value = updatedAccount.TypeAnk;
+                accountElement.Element("Rooms").Value = updatedAccount.Rooms;
+                accountElement.Element("RentPriceOt").Value = updatedAccount.RentPriceOt;
+                accountElement.Element("RentPriceDo").Value = updatedAccount.RentPriceDo;
+                accountElement.Element("BuyPriceOt").Value = updatedAccount.BuyPriceOt;
+                accountElement.Element("BuyPriceDo").Value = updatedAccount.BuyPriceDo;
+
+                doc.Save(file);
+                return true;
+            }
+            return false;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Ошибка обновления: " + ex.Message);
             return false;
         }
     }
