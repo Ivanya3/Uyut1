@@ -87,3 +87,21 @@ C:\Users\User\source\repos\uyut ver 4\uyut ver 4  копия\уют!\obj\Debug\�
 C:\Users\User\source\repos\uyut ver 4\uyut ver 4  копия\уют!\obj\Debug\уют!.csproj.Up2Date
 C:\Users\User\source\repos\uyut ver 4\uyut ver 4  копия\уют!\obj\Debug\уют!.exe
 C:\Users\User\source\repos\uyut ver 4\uyut ver 4  копия\уют!\obj\Debug\уют!.pdb
+C:\Users\squae\Source\Repos\Uyut12\уют!\bin\Debug\уют!.exe.config
+C:\Users\squae\Source\Repos\Uyut12\уют!\bin\Debug\уют!.exe
+C:\Users\squae\Source\Repos\Uyut12\уют!\bin\Debug\уют!.pdb
+C:\Users\squae\Source\Repos\Uyut12\уют!\bin\Debug\EntityFramework.xml
+C:\Users\squae\Source\Repos\Uyut12\уют!\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\squae\Source\Repos\Uyut12\уют!\obj\Debug\уют!.csproj.AssemblyReference.cache
+C:\Users\squae\Source\Repos\Uyut12\уют!\obj\Debug\уют_.Anketa.resources
+C:\Users\squae\Source\Repos\Uyut12\уют!\obj\Debug\уют_.AutorizationForm.resources
+C:\Users\squae\Source\Repos\Uyut12\уют!\obj\Debug\уют_.EditAnketa.resources
+C:\Users\squae\Source\Repos\Uyut12\уют!\obj\Debug\уют_.MainForm.resources
+C:\Users\squae\Source\Repos\Uyut12\уют!\obj\Debug\уют_.ProfileForm.resources
+C:\Users\squae\Source\Repos\Uyut12\уют!\obj\Debug\уют_.Properties.Resources.resources
+C:\Users\squae\Source\Repos\Uyut12\уют!\obj\Debug\уют_.RegistrationForm.resources
+C:\Users\squae\Source\Repos\Uyut12\уют!\obj\Debug\уют!.csproj.GenerateResource.cache
+C:\Users\squae\Source\Repos\Uyut12\уют!\obj\Debug\уют!.csproj.CoreCompileInputs.cache
+C:\Users\squae\Source\Repos\Uyut12\уют!\obj\Debug\уют!.csproj.Up2Date
+C:\Users\squae\Source\Repos\Uyut12\уют!\obj\Debug\уют!.exe
+C:\Users\squae\Source\Repos\Uyut12\уют!\obj\Debug\уют!.pdb

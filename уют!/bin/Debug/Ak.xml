@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Accounts>
+    
   <Account>
-    <Login>ivan</Login>
-    <Password>7sWNlYITpF+h9iLoU/vbQZohAaC9MyvlHDfH/AQWV6dLluCD</Password>
-    <TransactionTypeAnk>1</TransactionTypeAnk>
-    <TypeAnk>Квартира</TypeAnk>
-    <Rooms>4</Rooms>
+    <Login>huch</Login>
+    <Password>M7Lze3VIFOSU0PiKRAXTKJ87s4hpESBL8M5iYNaUpzl95WbF</Password>
+    <TransactionTypeAnk>2</TransactionTypeAnk>
+    <TypeAnk>2</TypeAnk>
+    <Rooms>0</Rooms>
     <RentPriceOt>0</RentPriceOt>
     <RentPriceDo>1000000000</RentPriceDo>
     <BuyPriceOt>0</BuyPriceOt>
