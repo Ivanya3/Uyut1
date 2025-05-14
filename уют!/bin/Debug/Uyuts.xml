@@ -15,6 +15,7 @@
     <City>Сочи</City>
     <TransactionType>1</TransactionType>
     <BuyPrice>25000000</BuyPrice>
+	<RentPrice>0</RentPrice>
     <Description>2-этажный коттедж у моря, 150 кв.м, участок 6 соток</Description>
   </Property>
   <Property>
@@ -23,6 +24,7 @@
     <City>Казань</City>
     <TransactionType>0</TransactionType>
     <RentPrice>25000</RentPrice>
+    <BuyPrice>0</BuyPrice>
     <Description>1-комн. квартира, 35 кв.м, евроремонт</Description>
   </Property>
   <Property>
@@ -31,6 +33,7 @@
     <City>Подмосковье</City>
     <TransactionType>1</TransactionType>
     <BuyPrice>18000000</BuyPrice>
+	<RentPrice>0</RentPrice>
     <Description>Дом в коттеджном поселке, 90 кв.м</Description>
   </Property>
   <Property>
@@ -48,6 +51,7 @@
     <City>Сочи</City>
     <TransactionType>1</TransactionType>
     <BuyPrice>25000000</BuyPrice>
+	<RentPrice>0</RentPrice>
     <Description>2-этажный коттедж у моря, 150 кв.м, участок 6 соток</Description>
   </Property>
   <Property>
@@ -56,6 +60,7 @@
     <City>Казань</City>
     <TransactionType>0</TransactionType>
     <RentPrice>25000</RentPrice>
+    <BuyPrice>0</BuyPrice>
     <Description>1-комн. квартира, 35 кв.м, евроремонт</Description>
   </Property>
   <Property>
@@ -64,6 +69,7 @@
     <City>Подмосковье</City>
     <TransactionType>1</TransactionType>
     <BuyPrice>18000000</BuyPrice>
+    <RentPrice>0</RentPrice>
     <Description>Дом в коттеджном поселке, 90 кв.м</Description>
   </Property>
 </Properties>

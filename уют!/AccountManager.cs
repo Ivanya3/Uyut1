@@ -4,11 +4,15 @@ using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 using System.Windows.Forms;
-
+/// <summary>
+/// класс данных аккаунта
+/// </summary>
 public static class AccountManager
 {
     private static string file = "Ak.xml"; // файл XML
-
+    /// <summary>
+    /// загружает список из XML-файла и возвращает их в виде объектов класса Account
+    /// </summary>
     public static List<Account> LoadAccounts()
     {
         List<Account> accounts = new List<Account>();
@@ -29,6 +33,7 @@ public static class AccountManager
             foreach (XElement accountElement in doc.Root.Elements("Account"))
             {
                 string login = accountElement.Element("Login")?.Value;
+                
                 string password = accountElement.Element("Password")?.Value;
 
                 if (!string.IsNullOrEmpty(login) && !string.IsNullOrEmpty(password))
@@ -37,12 +42,12 @@ public static class AccountManager
                         Login = login,
                         Password = password,
                         TransactionTypeAnk = accountElement.Element("TransactionTypeAnk")?.Value ?? "2",
-                        TypeAnk = accountElement.Element("TypeAnk")?.Value ?? "Все",
-                        Rooms = accountElement.Element("Rooms")?.Value ?? "все",
-                        RentPriceOt = accountElement.Element("RentPriceOt")?.Value ?? "все",
-                        RentPriceDo = accountElement.Element("RentPriceDo")?.Value ?? "все",
-                        BuyPriceOt = accountElement.Element("BuyPriceOt")?.Value ?? "все",
-                        BuyPriceDo = accountElement.Element("BuyPriceDo")?.Value ?? "все"
+                        TypeAnk = accountElement.Element("TypeAnk")?.Value ?? "2",
+                        Rooms = accountElement.Element("Rooms")?.Value ?? "0",
+                        RentPriceOt = accountElement.Element("RentPriceOt")?.Value ?? "0",
+                        RentPriceDo = accountElement.Element("RentPriceDo")?.Value ?? "1000000000",
+                        BuyPriceOt = accountElement.Element("BuyPriceOt")?.Value ?? "0",
+                        BuyPriceDo = accountElement.Element("BuyPriceDo")?.Value ?? "1000000000"
                     });
                 }
             }
@@ -54,7 +59,10 @@ public static class AccountManager
 
         return accounts;
     }
-
+    /// <summary>
+    /// Добавляем аккаунта
+    /// </summary>
+    /// <returns></returns>
     public static bool AddAccount(string login, string password)
     {
         try
@@ -74,12 +82,12 @@ public static class AccountManager
                     new XElement("Login", login),
                     new XElement("Password", password),
                     new XElement("TransactionTypeAnk", "2"),
-                    new XElement("TypeAnk", "Все"),
-                    new XElement("Rooms", "все"),
-                    new XElement("RentPriceOt", "все"),
-                    new XElement("RentPriceDo", "все"),
-                    new XElement("BuyPriceOt", "все"),
-                    new XElement("BuyPriceDo", "все")
+                    new XElement("TypeAnk", "2"),
+                    new XElement("Rooms", "0"),
+                    new XElement("RentPriceOt", "0"),
+                    new XElement("RentPriceDo", "1000000000"),
+                    new XElement("BuyPriceOt", "0"),
+                    new XElement("BuyPriceDo", "1000000000")
                 ));
             doc.Save(file);
             return true;
@@ -90,6 +98,11 @@ public static class AccountManager
             return false;
         }
     }
+    /// <summary>
+    /// обновляем данные аккаунта
+    /// </summary>
+    /// <param name="updatedAccount"></param>
+    /// <returns></returns>
     public static bool UpdateAccount(Account updatedAccount)
     {
         try
@@ -123,7 +136,11 @@ public static class AccountManager
             return false;
         }
     }
-
+    /// <summary>
+    /// поиск аккаунта по логину
+    /// </summary>
+    /// <param name="login"></param>
+    /// <returns></returns>
     public static Account FindAccount(string login)
     {
         List<Account> accounts = LoadAccounts();
