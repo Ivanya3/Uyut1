@@ -5,3 +5,5 @@
 /.vs/уют!/v17
 /.vs
 /packages
+/UnitTest_uut/obj/Debug
+/UnitTest_uut/bin/Debug
