@@ -33,4 +33,37 @@
     <BuyPriceOt>все</BuyPriceOt>
     <BuyPriceDo>все</BuyPriceDo>
   </Account>
+  <Account>
+    <Login>huch</Login>
+    <Password>OKGQu54k+/Y3FiC3ZkRNgcvip1+q91HPtHT6emMwvwXmgvSs</Password>
+    <TransactionTypeAnk>2</TransactionTypeAnk>
+    <TypeAnk>Все</TypeAnk>
+    <Rooms>все</Rooms>
+    <RentPriceOt>все</RentPriceOt>
+    <RentPriceDo>все</RentPriceDo>
+    <BuyPriceOt>все</BuyPriceOt>
+    <BuyPriceDo>все</BuyPriceDo>
+  </Account>
+  <Account>
+    <Login>huchu</Login>
+    <Password>DLcyLafMmcrQAON3oeAC7Z8su7N+/kI4y3V+G5hi98Pg3Hsj</Password>
+    <TransactionTypeAnk>2</TransactionTypeAnk>
+    <TypeAnk>Все</TypeAnk>
+    <Rooms>все</Rooms>
+    <RentPriceOt>все</RentPriceOt>
+    <RentPriceDo>все</RentPriceDo>
+    <BuyPriceOt>все</BuyPriceOt>
+    <BuyPriceDo>все</BuyPriceDo>
+  </Account>
+  <Account>
+    <Login>huchup</Login>
+    <Password>y0RzBrA34eJWy/nmNGX1320EUfX2RZB5YMvgTQsINHpztUJt</Password>
+    <TransactionTypeAnk>2</TransactionTypeAnk>
+    <TypeAnk>Все</TypeAnk>
+    <Rooms>все</Rooms>
+    <RentPriceOt>все</RentPriceOt>
+    <RentPriceDo>все</RentPriceDo>
+    <BuyPriceOt>все</BuyPriceOt>
+    <BuyPriceDo>все</BuyPriceDo>
+  </Account>
 </Accounts>
