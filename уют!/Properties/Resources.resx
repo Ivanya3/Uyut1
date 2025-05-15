@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,55 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountCreatedSuccess" xml:space="preserve">
+    <value>Аккаунт успешно создан!</value>
+  </data>
+  <data name="AccountNotFound" xml:space="preserve">
+    <value>Аккаунт не найден!</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="EyeClose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EyeClose.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EyeOpen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EyeGrey.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LoginErrorChars" xml:space="preserve">
+    <value>Только английские буквы (a-z), цифры (0-9) и _</value>
+  </data>
+  <data name="LoginErrorLengthLong" xml:space="preserve">
+    <value>Логин должен быть до 20 символов</value>
+  </data>
+  <data name="LoginErrorLengthShort" xml:space="preserve">
+    <value>Логин должен быть от 3 символов</value>
+  </data>
+  <data name="LoginPlaceholder" xml:space="preserve">
+    <value>Введите логин...</value>
+  </data>
+  <data name="LoginRequiredMessage" xml:space="preserve">
+    <value>Введите логин и пароль!</value>
+  </data>
+  <data name="PasswordErrorLengthLong" xml:space="preserve">
+    <value>Пароль должен быть до 32 символов</value>
+  </data>
+  <data name="PasswordErrorLengthShort" xml:space="preserve">
+    <value>Пароль должен быть от 8 символов</value>
+  </data>
+  <data name="PasswordMatchError" xml:space="preserve">
+    <value>Пароль не должен совпадать с логином</value>
+  </data>
+  <data name="PasswordPlaceholder" xml:space="preserve">
+    <value>Введите пароль...</value>
+  </data>
+  <data name="PasswordRequiredMessage" xml:space="preserve">
+    <value>Пароль не может быть пустым</value>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>Неверный пароль!</value>
+  </data>
 </root>

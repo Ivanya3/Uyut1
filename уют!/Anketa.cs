@@ -11,6 +11,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace уют_
 {
+    /// <summary>
+    /// класс анкеты 
+    /// </summary>
     public partial class Anketa: Form
     {
         public Anketa()
@@ -26,7 +29,7 @@ namespace уют_
             comboBox_vopros1.Items.AddRange(new object[] { "покупка", "аренда", "все" });//варианты ответов
             //СomboBox_vopros2
             comboBox_vopros2.DropDownStyle = ComboBoxStyle.DropDownList; // Запрет ручного ввода
-            comboBox_vopros2.Items.AddRange(new object[] { "квартира", "дом", "все" });//варианты ответов
+            comboBox_vopros2.Items.AddRange(new object[] { "Квартира", "Дом", "все" });//варианты ответов
             //СomboBox_vopros3
             comboBox_vopros3.DropDownStyle = ComboBoxStyle.DropDownList; // Запрет ручного ввода
             comboBox_vopros3.Items.AddRange(new object[] { "1", "2", "3", "4", "5+", "все" });//варианты ответов
@@ -68,60 +71,52 @@ namespace уют_
                     break;
             }
         }
-        //currentUser.TransactionTypeAnk = comboBox_vopros1.SelectedItem.ToString();
-        //bool success = AccountManager.UpdateAccount(currentUser);
 
-        private void button1_Click(object sender, EventArgs e)// устанавливаем настройки и анкеты
+        private void button1_Click(object sender, EventArgs e)// устанавливаем настройки из анкеты
         {
             Account currentUser = AppContext.CurrentUser;
-            if (comboBox_vopros1.SelectedItem.ToString() == "покупка")
+            currentUser.TransactionTypeAnk = "2";
+            if (comboBox_vopros1.Text == "покупка")
             {
                 currentUser.TransactionTypeAnk = "1";
-                bool success = AccountManager.UpdateAccount(currentUser);
             }
-            if (comboBox_vopros1.SelectedItem.ToString() == "аренда")
+            else if (comboBox_vopros1.Text == "аренда")
             {
                 currentUser.TransactionTypeAnk = "0";
-                bool success = AccountManager.UpdateAccount(currentUser);
             }
-            if (comboBox_vopros1.SelectedItem.ToString() == "все")
+            else
             {
                 currentUser.TransactionTypeAnk = "2";
-                bool success = AccountManager.UpdateAccount(currentUser);
             }
-            if (comboBox_vopros2.Text != "")
+            currentUser.TypeAnk = "все";
+            if (comboBox_vopros2.Text != null && comboBox_vopros2.Text.Replace(" ", "") != "")
             {
-                currentUser.TypeAnk = comboBox_vopros2.SelectedItem.ToString();
-                bool success = AccountManager.UpdateAccount(currentUser);
+                currentUser.TypeAnk = comboBox_vopros2.Text;
             }
-            if (comboBox_vopros3.Text != "")
+            currentUser.RentPriceOt = "0";
+            if (comboBox_vopros4_ot.Text != "все" && comboBox_vopros4_ot.Text != null && comboBox_vopros4_ot.Text.Replace(" ", "") != "")
             {
-                currentUser.Rooms = comboBox_vopros3.SelectedItem.ToString();
-                bool success = AccountManager.UpdateAccount(currentUser);
+                currentUser.RentPriceOt = comboBox_vopros4_ot.Text.Replace(" ", "");
             }
-            if (comboBox_vopros4_ot.Text != "")
+            currentUser.RentPriceDo = "1000000000";
+            if (comboBox_vopros4_do.Text != "все" && comboBox_vopros4_do.Text != null && comboBox_vopros4_do.Text.Replace(" ", "") != "")
             {
-                currentUser.RentPriceOt = comboBox_vopros4_ot.SelectedItem.ToString();
-                bool success = AccountManager.UpdateAccount(currentUser);
+                currentUser.RentPriceDo = comboBox_vopros4_do.Text.Replace(" ", "");
             }
-            if (comboBox_vopros4_do.Text != "")
+            currentUser.BuyPriceDo = "1000000000";
+            if (comboBox_vopros5_do.Text != "все" && comboBox_vopros5_do.Text != null && comboBox_vopros5_do.Text.Replace(" ", "") != "")
             {
-                currentUser.RentPriceDo = comboBox_vopros4_do.SelectedItem.ToString();
-                bool success = AccountManager.UpdateAccount(currentUser);
+                currentUser.BuyPriceDo = comboBox_vopros5_do.Text.Replace(" ", "");
             }
-            if (comboBox_vopros5_ot.Text != "")
+            currentUser.BuyPriceOt = "0";
+            if (comboBox_vopros5_ot.Text != "все" && comboBox_vopros5_ot.Text != null && comboBox_vopros5_ot.Text.Replace(" ", "") != "") 
             {
-                currentUser.BuyPriceOt = comboBox_vopros5_ot.SelectedItem.ToString();
-                bool success = AccountManager.UpdateAccount(currentUser);
+                currentUser.BuyPriceOt = comboBox_vopros5_ot.Text.Replace(" ", "");
             }
-            if (comboBox_vopros5_do.Text != "")
-            {
-                currentUser.BuyPriceDo = comboBox_vopros5_do.SelectedItem.ToString();
-                bool success = AccountManager.UpdateAccount(currentUser);
-            }
-            MainForm mainForm = new MainForm();//открываем основную форму
+            AccountManager.UpdateAccount(currentUser);
+            MainForm mainForm = new MainForm();
             mainForm.Show();
-            this.Hide();// выходем из этой формы
+            this.Hide();
         }
     }
 }

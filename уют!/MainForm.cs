@@ -46,62 +46,72 @@ namespace уют_
 
         private void InitializeTemplate()
         {
-            templateCard = panelCardTemplate;//создаем копию
-            templateCard.Visible = false;//скрываем панель-образец
-            templateCard.Parent = null; //убираем её из католога
+            templateCard = panelCardTemplate;
+            templateCard.Visible = false;
+            templateCard.Parent = null; 
         }
+        private void CopePanel(int i)
+        {
+            Panel newCard = new Panel
+            {
+                Name = $"{cardCounter++}",
+                Size = templateCard.Size,
+                BackColor = templateCard.BackColor,
+                BorderStyle = templateCard.BorderStyle,
+                Margin = templateCard.Margin
+            };
 
-        //=========================Создаем список объектов=================================
+            // Копируем дочерние элементы
+            CloneChildControls(templateCard, newCard, i);
+
+            flowMain.Controls.Add(newCard);
+        }
         private void LoadDataFromXml()
     {
-            try//использую чтоб не вызвать ошбку
+            try
             {
-                XDocument doc = XDocument.Load("Uyuts.xml");//копируем файл в переменную
+                XDocument doc = XDocument.Load("Uyuts.xml");
 
-                List<Property> properties = new List<Property>();//создаем список класса Property
+                List<Property> properties = new List<Property>();
 
-
-                foreach (XElement propertyElement in doc.Root.Elements("Property"))//идем по всем элементам doc, то есть Property
+                foreach (XElement propertyElement in doc.Root.Elements("Property"))
                 {
-                    MessageBox.Show($" {propertyElement.Element("Id")?.Value}");
-                    Property prop = new Property//создаем переменную класса Property
+                    Property prop = new Property
                     {
                         Id = propertyElement.Element("Id")?.Value,
-                        Type = propertyElement.Element("Type")?.Value,//присваиваем Type соответствующий элемент Property
-                        City = propertyElement.Element("City")?.Value,//присваиваем City соответствующий элемент Property
-                        TransactionType = int.Parse(propertyElement.Element("TransactionType")?.Value ?? "0"),//присваиваем TransactionType соответствующий элемент Property
-                        RentPrice = decimal.Parse(propertyElement.Element("RentPrice")?.Value ?? "0"),//присваиваем RentPrice соответствующий элемент Property(если есть)
-                        BuyPrice = decimal.Parse(propertyElement.Element("BuyPrice")?.Value ?? "0"),//присваиваем BuyPrice соответствующий элемент Property(если есть)
-                        Description = propertyElement.Element("Description")?.Value//присваиваем Description соответствующий элемент Property
+                        Type = propertyElement.Element("Type")?.Value,
+                        City = propertyElement.Element("City")?.Value,
+                        TransactionType = int.Parse(propertyElement.Element("TransactionType")?.Value ?? "0"),
+                        RentPrice = decimal.Parse(propertyElement.Element("RentPrice")?.Value ?? "0"),
+                        BuyPrice = decimal.Parse(propertyElement.Element("BuyPrice")?.Value ?? "0"),
+                        Description = propertyElement.Element("Description")?.Value
                     };
 
-                    properties.Add(prop);//добавляем prop в properties
+                    properties.Add(prop);
 
                 }
 
-                // properties — массив с данными из файла
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка: {ex.Message}");//сообщаем об ошибке 
+                MessageBox.Show($"Ошибка: {ex.Message}");
             }
         }
 
-        private void LoadProperties()// создаем католог по умолчанию
+        private void LoadProperties()
         {
-            var properties = PropertyManager.LoadProperties();// берем переменную класса properties PropertyManager
-            CreateCards(properties.Count); // создаем католог из всех элементов по умолчанию
+            var properties = PropertyManager.LoadProperties();
+            CreateCards(properties.Count); 
 
         }
 
-        private void CreateCards(int count)//для создания панели по образцу
+        private void CreateCards(int count)
         {
-            flowMain.Controls.Clear();// очищаем flowMain
+            flowMain.Controls.Clear();
 
-            for (int i = 0; i < count; i++)//
+            for (int i = 0; i < count; i++)
             {
-                // Создаем копию шаблона
-                Panel newCard = new Panel// создаем панель по образцу
+                Panel newCard = new Panel
                 {
                     Name = $"{cardCounter++}",
                     Size = templateCard.Size,
@@ -110,19 +120,17 @@ namespace уют_
                     Margin = templateCard.Margin
                 };
 
-                // Копируем дочерние элементы
                 CloneChildControls(templateCard, newCard, i);
                 
-                flowMain.Controls.Add(newCard);// добавляем созданную панел товара в католог
+                flowMain.Controls.Add(newCard);
             }
-        }//=====================================================
-
-        private void CloneChildControls(Control source, Control destination, int i)// для копирования дочерних элементов
+        }
+        private void CloneChildControls(Control source, Control destination, int i)
         {
-            foreach (Control original in source.Controls)//идем по всем элементам
+            foreach (Control original in source.Controls)
             {
-                var properties = PropertyManager.LoadProperties();//берем переменную класса properties PropertyManager
-                Control clone = null;//
+                var properties = PropertyManager.LoadProperties();
+                Control clone = null;
 
                 if (original is Label lbl)
                 {
@@ -193,73 +201,60 @@ namespace уют_
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)// для выхода при нажатии на кнопку закрытия
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Close_Button.BackColor = Color.Red;//для красоты
-            Application.Exit();//выходим
+            Close_Button.BackColor = Color.Red;
+            Application.Exit();
         }
         
-        Point LastPoint;// создаем переменную для запоминания расположения
+        Point LastPoint;
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
-            LastPoint = new Point(e.X, e.Y);//запоминаем расположение при нажатии ЛКМ
+            LastPoint = new Point(e.X, e.Y);
         }
 
         private void MainForm_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)//измением расположение когда двигаем мышь с зажатым ЛКМ
+            if (e.Button == MouseButtons.Left)
             {
                 this.Left += e.X - LastPoint.X;
                 this.Top += e.Y - LastPoint.Y;
             }
         }
 
-        private void labelProf_Click(object sender, EventArgs e)//открытие профиля
+        private void labelProf_Click(object sender, EventArgs e)
         {
-            ProfileForm profileForm = new ProfileForm();//создаем новое окно профиля
-            profileForm.Show();//открываем его
-            this.Hide();//закрываем существующие (MainForm)
+            ProfileForm profileForm = new ProfileForm();
+            profileForm.Show();
+            this.Hide();
         }
 
-        private void labelAnk_Click(object sender, EventArgs e)//открытие анкеты
+        private void labelAnk_Click(object sender, EventArgs e)
         {
-            Anketa anketaForm = new Anketa();//создаем новое окно анкеты
-            anketaForm.Show();//открываем его
-            this.Hide();//закрываем существующие (MainForm)
+            Anketa anketaForm = new Anketa();
+            anketaForm.Show();
+            this.Hide();
         }
 
         private void panelHeader_Click(object sender, EventArgs e)
         {
-            panel_choice.Visible = true;//делаем видимым выбор катологов
+            panel_choice.Visible = true;
         }
 
         private void panel_tr_Click(object sender, EventArgs e)
         {
-            panel_choice.Visible = false;// закрываем выбор
-            flowMain.Controls.Clear();// очищаем существующий котолог
+            panel_choice.Visible = false;
+            flowMain.Controls.Clear();
 
-            var properties = PropertyManager.LoadProperties();//берем список с данными
+            var properties = PropertyManager.LoadProperties();
 
-            category.Text = label_Tr.Text;//меняем название католога
+            category.Text = label_Tr.Text;
 
-            for (int i = 0; i < properties.Count; i++)//идем по всему списку
+            for (int i = 0; i < properties.Count; i++)
             {
                 if (properties[i].TransactionType == 0 || properties[i].TransactionType == 2)//находим товар, который удовлетворяет условиям
                 {
-                    // Создаем копию шаблона
-                    Panel newCard = new Panel
-                    {
-                        Name = $"{cardCounter++}",
-                        Size = templateCard.Size,
-                        BackColor = templateCard.BackColor,
-                        BorderStyle = templateCard.BorderStyle,
-                        Margin = templateCard.Margin
-                    };
-
-                    // Копируем дочерние элементы
-                    CloneChildControls(templateCard, newCard, i);
-
-                    flowMain.Controls.Add(newCard);
+                    CopePanel(i);
                 }
             }
         }
@@ -271,8 +266,6 @@ namespace уют_
 
             var properties = PropertyManager.LoadProperties();
 
-            int count = 0;
-
             category.Text = label_pok.Text;
 
             for (int i = 0; i < properties.Count; i++)
@@ -280,19 +273,7 @@ namespace уют_
                 if (properties[i].TransactionType == 1 || properties[i].TransactionType == 2)
                 {
                     // Создаем копию шаблона
-                    Panel newCard = new Panel
-                    {
-                        Name = $"{cardCounter++}",
-                        Size = templateCard.Size,
-                        BackColor = templateCard.BackColor,
-                        BorderStyle = templateCard.BorderStyle,
-                        Margin = templateCard.Margin
-                    };
-
-                    // Копируем дочерние элементы
-                    CloneChildControls(templateCard, newCard, i);
-
-                    flowMain.Controls.Add(newCard);
+                    CopePanel(i);
                 }
             }
         }
@@ -304,25 +285,13 @@ namespace уют_
 
             var properties = PropertyManager.LoadProperties();
 
-            int count = 0;
-
             category.Text = label_All.Text;
 
             for (int i = 0; i < properties.Count; i++)
             {
                 // Создаем копию шаблона
-                Panel newCard = new Panel
-                {
-                    Name = $"{cardCounter++}",
-                    Size = templateCard.Size,
-                    BackColor = templateCard.BackColor,
-                    BorderStyle = templateCard.BorderStyle,
-                    Margin = templateCard.Margin
-                };
-                // Копируем дочерние элементы
-                CloneChildControls(templateCard, newCard, i);
-                flowMain.Controls.Add(newCard);
-                
+                CopePanel(i);
+
             }
         }
 
@@ -334,8 +303,6 @@ namespace уют_
 
             var properties = PropertyManager.LoadProperties();
 
-            int count = 0;
-
             category.Text = label_kv.Text;
 
             for (int i = 0; i < properties.Count; i++)
@@ -343,19 +310,7 @@ namespace уют_
                 if (properties[i].Type == "Квартира")
                 {
                     // Создаем копию шаблона
-                    Panel newCard = new Panel
-                    {
-                        Name = $"{cardCounter++}",
-                        Size = templateCard.Size,
-                        BackColor = templateCard.BackColor,
-                        BorderStyle = templateCard.BorderStyle,
-                        Margin = templateCard.Margin
-                    };
-
-                    // Копируем дочерние элементы
-                    CloneChildControls(templateCard, newCard, i);
-
-                    flowMain.Controls.Add(newCard);
+                    CopePanel(i);
                 }
             }
         }
@@ -367,8 +322,6 @@ namespace уют_
 
             var properties = PropertyManager.LoadProperties();
 
-            int count = 0;
-
             category.Text = label_dom.Text;
 
             for (int i = 0; i < properties.Count; i++)
@@ -376,19 +329,7 @@ namespace уют_
                 if (properties[i].Type == "Дом")
                 {
                     // Создаем копию шаблона
-                    Panel newCard = new Panel
-                    {
-                        Name = $"{cardCounter++}",
-                        Size = templateCard.Size,
-                        BackColor = templateCard.BackColor,
-                        BorderStyle = templateCard.BorderStyle,
-                        Margin = templateCard.Margin
-                    };
-
-                    // Копируем дочерние элементы
-                    CloneChildControls(templateCard, newCard, i);
-
-                    flowMain.Controls.Add(newCard);
+                    CopePanel(i);
                 }
             }
 
@@ -401,48 +342,21 @@ namespace уют_
 
             var properties = PropertyManager.LoadProperties();
 
-            int count = 0;
 
             Account currentUser = AppContext.CurrentUser;
 
             category.Text = label_Ank.Text;
             int TT = int.Parse(currentUser.TransactionTypeAnk);
-
+            int RPriceOt = int.Parse(currentUser.RentPriceOt);
+            int RPriceDo = int.Parse(currentUser.RentPriceDo);
+            int BPriceOt = int.Parse(currentUser.BuyPriceOt);
+            int BPriceDo = int.Parse(currentUser.BuyPriceDo);
+            string TAnk = currentUser.TypeAnk;
             for (int i = 0; i < properties.Count; i++)
             {
-                if (TT == 2)
+                if (((TT == 2 ) || (properties[i].TransactionType == TT || properties[i].TransactionType == 2)) && ((properties[i].Type == TAnk || TAnk == "все")) && (properties[i].RentPrice >= RPriceOt ) && (properties[i].RentPrice <= RPriceDo) && (properties[i].BuyPrice >= BPriceOt) && (properties[i].BuyPrice <= BPriceDo))
                 {
-                    // Создаем копию шаблона
-                    Panel newCard = new Panel
-                    {
-                        Name = $"{cardCounter++}",
-                        Size = templateCard.Size,
-                        BackColor = templateCard.BackColor,
-                        BorderStyle = templateCard.BorderStyle,
-                        Margin = templateCard.Margin
-                    };
-
-                    // Копируем дочерние элементы
-                    CloneChildControls(templateCard, newCard, i);
-
-                    flowMain.Controls.Add(newCard);
-                }
-                else if (properties[i].TransactionType == TT || properties[i].TransactionType ==2)
-                {
-                    // Создаем копию шаблона
-                    Panel newCard = new Panel
-                    {
-                        Name = $"{cardCounter++}",
-                        Size = templateCard.Size,
-                        BackColor = templateCard.BackColor,
-                        BorderStyle = templateCard.BorderStyle,
-                        Margin = templateCard.Margin
-                    };
-
-                    // Копируем дочерние элементы
-                    CloneChildControls(templateCard, newCard, i);
-
-                    flowMain.Controls.Add(newCard);
+                    CopePanel(i);
                 }
             }
         }

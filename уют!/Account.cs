@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
+/// <summary>
+/// класс аккаунт
+/// </summary>
 public class Account
 {
     // Поля для хранения данных

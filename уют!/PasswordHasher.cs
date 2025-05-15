@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
-
+/// <summary>
+/// класс для хеширования пароля
+/// </summary>
 public static class PasswordHasher
 {
-    // Генерирует хеш пароля (с солью)
+    /// <summary>
+    /// Генерирует хеш пароля (с солью)
+    /// </summary>
+    /// <param name="password"></param>
+    /// <returns></returns>
     public static string HashPassword(string password)
     {
         // Генерируем случайную "соль"
@@ -23,8 +29,12 @@ public static class PasswordHasher
         // Конвертируем в строку Base64
         return Convert.ToBase64String(hashBytes);
     }
-
-    // Проверяет пароль против хеша
+    /// <summary>
+    /// Проверяет пароль против хеша
+    /// </summary>
+    /// <param name="password"></param>
+    /// <param name="hashedPassword"></param>
+    /// <returns></returns>
     public static bool VerifyPassword(string password, string hashedPassword)
     {
         // Декодируем строку Base64 обратно в байты
